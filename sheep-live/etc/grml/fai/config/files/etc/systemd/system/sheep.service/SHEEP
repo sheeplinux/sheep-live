@@ -1,0 +1,8 @@
+[Unit]
+Description=Sheep service
+
+[Service]
+ExecStart=/usr/bin/sheep-service
+
+[Install]
+WantedBy=multi-user.target

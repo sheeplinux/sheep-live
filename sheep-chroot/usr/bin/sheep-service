@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Sheep service not implemented" > /var/log/sheep.log
+
+exit 0
