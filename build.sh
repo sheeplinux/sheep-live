@@ -13,6 +13,8 @@ export GRML_LIVE_DIR=$(mktemp -d)
 
 git clone -b v0.34.4 --depth 1 https://github.com/grml/grml-live.git ${GRML_LIVE_DIR}
 
+cp -r ${SCRIPT_DIR}/sheep-live/* ${GRML_LIVE_DIR}/
+
 export GRML_FAI_CONFIG=${GRML_LIVE_DIR}/etc/grml/fai
 export SCRIPTS_DIRECTORY=${GRML_LIVE_DIR}/scripts
 export TEMPLATE_DIRECTORY=${GRML_LIVE_DIR}/templates
