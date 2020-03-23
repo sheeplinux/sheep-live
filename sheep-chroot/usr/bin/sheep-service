@@ -1,5 +1,37 @@
 #!/bin/bash
 
-echo "Sheep service not implemented" > /var/log/sheep.log
+set -ex
+
+{
+	declare -A configMap
+
+	search_value() {
+		if [ ${#configMap[@]} -eq 0 ]; then
+			local cmd=$(cat /proc/cmdline)
+			IFS=' ' read -r -a array <<< "${cmd}"
+			for param in ${array[@]}; do
+				local key=$(echo "${param}" | cut -d '=' -f 1)
+				local value=$(echo "${param}" | cut -d '=' -f 2-)
+				configMap[${key}]=${value}
+			done
+		fi
+		local value=${configMap[${1}]}
+		echo ${value:-${2}}
+	}
+
+	script=$(search_value sheep.script)
+
+	if [ -n "${script}" ]; then
+		curl ${script} > /tmp/sheep
+	else
+		# TODO Download the latest stable sheep release from GitHub release
+		echo "ERROR : Cannot find Sheep script"
+		exit 1
+	fi
+
+	export SHEEP_LOG_FILE=/var/log/sheep.log
+	bash /tmp/sheep
+
+} > /var/log/sheep-service.log 2>&1
 
 exit 0
