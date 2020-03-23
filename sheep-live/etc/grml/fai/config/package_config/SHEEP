@@ -3,3 +3,5 @@ PACKAGES install
 python-pip
 python-setuptools
 jq
+
+libguestfs-tools
