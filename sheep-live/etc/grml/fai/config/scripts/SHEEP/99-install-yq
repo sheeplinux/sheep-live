@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -ex
+
+$ROOTCMD pip install wheel yq
