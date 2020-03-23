@@ -7,7 +7,11 @@ if [ ${USER} != 'root' ]; then
 	exit 1
 fi
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"
+if [ -d /vagrant ]; then
+	SCRIPT_DIR=/vagrant
+else
+	SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"
+fi
 
 export GRML_LIVE_DIR=$(mktemp -d)
 
