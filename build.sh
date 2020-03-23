@@ -26,5 +26,6 @@ export LIVE_CONF=${SCRIPT_DIR}/sheep-live.conf
 
 mkdir -p ${SCRIPT_DIR}/build
 
-cp ${GRML_LIVE_DIR}/grml/grml_cd/live/grml/grml.squashfs ${SCRIPT_DIR}/build
-cp ${GRML_LIVE_DIR}/grml/netboot/grml_netboot_package_grml_0.0.1.tar.bz2 ${SCRIPT_DIR}/build
+cp ${GRML_LIVE_DIR}/grml/grml_cd/live/grml/grml.squashfs ${SCRIPT_DIR}/build/sheep-live.squashfs
+cp $(ls ${GRML_LIVE_DIR}/grml/grml_chroot/boot/vmlinuz*) ${SCRIPT_DIR}/build/vmlinuz
+cp $(ls ${GRML_LIVE_DIR}/grml/grml_chroot/boot/initrd.img*) ${SCRIPT_DIR}/build/initrd.img
