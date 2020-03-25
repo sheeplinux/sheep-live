@@ -28,6 +28,7 @@ export LIVE_CONF=${SCRIPT_DIR}/sheep-live.conf
 
 (set -e && cd ${GRML_LIVE_DIR} && ./grml-live -F -n)
 
+rm -rf ${SCRIPT_DIR}/build
 mkdir -p ${SCRIPT_DIR}/build
 
 cp ${GRML_LIVE_DIR}/grml/grml_cd/live/grml/grml.squashfs ${SCRIPT_DIR}/build/sheep-live.squashfs
