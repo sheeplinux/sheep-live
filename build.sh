@@ -26,7 +26,7 @@ export TEMPLATE_DIRECTORY=${GRML_LIVE_DIR}/templates
 export GRML_CHROOT_DIR=${SCRIPT_DIR}/sheep-chroot
 export LIVE_CONF=${SCRIPT_DIR}/sheep-live.conf
 
-(cd ${GRML_LIVE_DIR} && ./grml-live -F -n)
+(set -e && cd ${GRML_LIVE_DIR} && ./grml-live -F -n)
 
 mkdir -p ${SCRIPT_DIR}/build
 
