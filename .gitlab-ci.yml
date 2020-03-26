@@ -1,0 +1,23 @@
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - vagrant-build
+  tags:
+    - vagrant
+  except:
+    - tags
+
+release:
+  stage: build
+  script:
+    - vagrant-build
+  artifacts:
+    paths:
+      - 'build/*'
+  tags:
+    - vagrant
+  only:
+    - tags
