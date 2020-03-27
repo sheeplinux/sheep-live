@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
     config.vm.hostname = 'sheep'
 
     config.vm.provider 'virtualbox' do |vb|
-        vb.customize ['modifyvm', :id, '--memory', '1024']
+        vb.customize ['modifyvm', :id, '--memory', '2048']
         vb.customize ['modifyvm', :id, '--chipset', 'ich9']
     end
 
