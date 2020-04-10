@@ -8,4 +8,4 @@ if [ ${USER} != 'root' ]; then
 fi
 
 sudo apt update
-sudo apt install -y git fai-client debootstrap mtools
+sudo apt install -y git fai-client debootstrap mtools squashfs-tools
