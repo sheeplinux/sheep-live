@@ -19,6 +19,12 @@ set -ex
 		echo ${value:-${2}}
 	}
 
+	startup=$(search_value startup)
+
+	if [ -n ${startup} ]; then
+		/etc/init.d/grml-autoconfig
+	fi
+
 	script=$(search_value sheep.script)
 
 	if [ -n "${script}" ]; then
