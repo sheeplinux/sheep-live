@@ -1,5 +1,7 @@
 # Sheep Live
 
+[![Build Status](https://api.travis-ci.org/sheeplinux/sheep-live.svg?branch=master)](https://travis-ci.org/sheeplinux/sheep-live)
+
 Sheep Live is a live Linux distribution used as a runtime environment for Sheep.
 
 ## Why a distribution for Sheep
