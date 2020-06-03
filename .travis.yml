@@ -1,0 +1,6 @@
+
+install:
+  - sudo ./prepare-build-env.sh
+
+script:
+  - sudo ./build.sh
