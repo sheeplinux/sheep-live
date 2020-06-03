@@ -4,3 +4,15 @@ install:
 
 script:
   - sudo ./build.sh
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: weMJKUBXa+CpbK0Y+yE6rXoUj3ta7mCfdeYwVdOHq7TobYvL6pypOjPwf6tyECcybPty6OgHkw5gT6vwy23q0QGVTjXRWNHjepd+pUVPTJjPh2zrVa8Wxt374Dn5TxxoxB2yAHS7HpKw6SaGj48FyKz/u4dyKFXANi6VIdg3kyYkqRhaaBtoZL7I/uZZvZmIheJxMGoNJeKNV74iJT0t7fphZT87bzTG7cJSsJqAUZbdBGCW0L5lY+/Sg+mQYMEnVMkPOo4H/K4ULXvMwc4xJJCvik5XlmZo7TDXpCa/V9Fs7fKfNLbfLsX54TttV0XYWteGwIc9A+hnqGW19RU5zR+vsFY2GsgqamC81D8+Mldqjcm10yNb/hw3hZ/R4vETRKYk1c4hISBKlzvaEBJjjFYidGDdDwvsWpY9uYiv6JhSGpcYbtPI2yFDS8v/7H5pzrtNqHj4YZi+iAxdtuEmfvx1uNGmHzMnK08lW/phXlzZs8NWoC2lIzlJB28fkfdWgS1flqeT6ZncQECT7bt41jWjrQJ8LYopDY4zUgbIY3rA5mL5/lyZHxhU3DdHU3PTzeOsa9MucuMop+XlZqEH57kPkC75AOqRfghoBQiTESwImp0j8Fn2bvw0PL6pLIDaRPVOEmMj2EMzU2Odv2UdSE8HnrU1i4xKs535r/Y48Q8=
+  file:
+    - build/sheep-live.squashfs
+    - build/initrd.img
+    - build/vmlinuz
+  on:
+    tags: true
